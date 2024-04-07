@@ -9,10 +9,10 @@ use App\Models\User;
 class AuthController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:api', ['except' => ['login', 'register']]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login','register']]);
+    }
 
     public function login(Request $request)
     {
@@ -32,38 +32,26 @@ class AuthController extends Controller
 
         $user = Auth::user();
         return response()->json([
-            'status' => 'success',
-            'user' => $user,
-            'authorisation' => [
-                'token' => $token,
-                'type' => 'bearer',
-            ]
-        ]);
+                'status' => 'success',
+                'user' => $user,
+                'authorisation' => [
+                    'token' => $token,
+                    'type' => 'bearer',
+                ]
+            ]);
+
     }
 
-    public function register(Request $request)
-    {
-
-        if ($request->hasFile('profile_image')) {
-            $file = $request->file('profile_image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move(public_path('/profile_pictures/'), $filename);
-        }
-        // if (File::exists(public_path('/profile_picutes') . $user->profile_picture)) {
-        //     File::delete((public_path('/profile_picutes') . $user->profile_picture));
-        // }
+    public function register(Request $request){
         $request->validate([
-            'name' => 'string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
         $user = User::create([
-            'name' => $request->name ?? "",
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            // 'profile_picture' => $filename
         ]);
 
         $token = Auth::login($user);

@@ -5,8 +5,6 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use laravel\sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\Model;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -22,7 +20,6 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
-        "profile_picture"
     ];
 
     /**
@@ -62,26 +59,6 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
-    }
-
-    public function posts(){
-        $this->hasMany(Post::class);
-    }
-    
-    public function likes(){
-        $this->hasMany(User::class);
-    }
-
-    public function comments(){
-        $this->hasMany(User::class);
-    }
-
-    public function following(){
-        $this->belongsToMany(User::class, 'follows', 'follower_id', 'following_id');
-    }
-    
-    public function followers(){
-        $this->belongsToMany(User::class, 'follows', 'following_id', 'follower_id');
     }
 
 }

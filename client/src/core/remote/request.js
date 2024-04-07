@@ -13,7 +13,7 @@ export const sendRequest = async (method, route, body) => {
     },
   });
 
-  if (response.status === 401) { 
+  if (response.status === 401) {
     localStorage.removeItem("token");
   }
 

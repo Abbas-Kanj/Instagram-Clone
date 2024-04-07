@@ -1,20 +1,17 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-
+import React from "react";
+import { useSelector } from "react-redux";
+import Sidebar from "../../common/components/Sidebar";
+import ProfileInfo from "./components/ProfileInfo";
 
 const ProfilePage = () => {
-    const users = useSelector((state) => state.users);
-    console.log(users)
+  const users = useSelector((state) => state.users);
+  console.log(users);
   return (
-    <div>
-      <div className='side-bar'>
-
-      </div>
-      <div className='profie-pg'>
-        
-      </div>
+    <div className="flex">
+      <Sidebar></Sidebar>
+      <ProfileInfo></ProfileInfo>
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

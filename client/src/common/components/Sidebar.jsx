@@ -1,20 +1,41 @@
 import React from "react";
 import "../styles/sidebar.css";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex h-full sidebar">
-      <div>
-        <h1>Instagram</h1>
-        <button><i className=""></i>Home</button>
-        <button><i className=""></i>Search</button>
-        <button><i className=""></i>Explore</button>
-        <button><i className=""></i>Reels</button>
-        <button><i className=""></i>Messages</button>
-        <button><i className=""></i>Notifications</button>
-        <button><i className=""></i>Profile</button>
+    <div className="flex column justify-between h-full p align-left  sidebar">
+      <div className="flex column justify-between h-half gap align-left">
+        <h1 className="mg-bottom p">Instagram</h1>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Home
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Search
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Explore
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Reels
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Messages
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Notifications
+        </button>
+        <button className="flex center btn-style w-full p medium-font bg-black text-primary">
+          <i className=""></i>Profile
+        </button>
       </div>
-      <button>Logout</button>
+      <div className="flex">
+        <button className="flex center btn-style w-full p medium-font bg-black text-red">
+          Logout
+        </button>
+      </div>
     </div>
   );
 };

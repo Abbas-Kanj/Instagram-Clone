@@ -1,0 +1,156 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+border: 0;
+scroll-behavior: smooth;
+}
+
+.flex {
+display: flex;
+}
+
+.column {
+flex-direction: column;
+}
+
+.center {
+justify-content: center;
+align-items: center;
+}
+
+.self-center {
+align-self: center;
+}
+
+.w-full {
+width: 100%;
+}
+
+.justify-between {
+justify-content: space-between;
+}
+
+.justify-evenly {
+justify-content: space-evenly;
+}
+.justify-around {
+justify-content: space-around;
+}
+.justify-center {
+justify-content: center;
+}
+.align-end {
+align-items: end;
+}
+.align-center {
+align-items: center;
+}
+
+.bold {
+font-weight: bold;
+}
+
+.big-gap {
+    gap: 25px;
+}
+    
+.gap {
+gap: 15px;
+}
+
+.small-gap {
+gap: 5px;
+}
+
+.h1-size {
+font-size: 65px;
+}
+
+.h-full {
+height: 100vh;
+}
+
+.p {
+padding: 20px;
+}
+
+.small-p {
+padding: 5px;
+}
+
+.border-radius {
+border-radius: 10px;
+}
+
+.mg-top {
+margin-top: 5px;
+}
+
+.hidden {
+display: none;
+}
+
+.text-align {
+text-align: center;
+}
+
+.large-font {
+font-size: 35px;
+}
+
+.medium-font {
+font-size: 19px;
+}
+
+.letter-spacing {
+letter-spacing: 2px;
+}
+
+.btn-style {
+padding: 8px 15px;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.btn-style:hover {
+opacity: 0.85;
+}
+
+.shadow:hover {
+box-shadow: 0px 1px 3px 2px gainsboro;
+}
+
+.input-style {
+border-radius: 30px;
+border: 1px solid gray;
+padding: 0 10px;
+font-size: 16px;
+outline: none;
+}
+
+.input {
+background-color: rgb(49, 45, 45);
+border: none;
+border-radius: 8px;
+padding: 10px 15px;
+outline: none;
+color: white;
+}
+.input::placeholder {
+color: rgb(177, 172, 172);
+}
+
+.cursor-pointer {
+cursor: pointer;
+}
+
+.cairo-text {
+font-family: "Cairo", sans-serif;
+font-optical-sizing: auto;
+font-weight: 200;
+font-style: normal;
+font-variation-settings: "slnt" 0;
+}
+

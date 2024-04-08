@@ -10,7 +10,7 @@ const ProfilePage = () => {
   return (
     <div className="flex">
       <Sidebar></Sidebar>
-      <ProfileInfo></ProfileInfo>
+      <ProfileInfo users={users}></ProfileInfo>
     </div>
   );
 };

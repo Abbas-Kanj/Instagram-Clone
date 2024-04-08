@@ -1,17 +1,12 @@
-export const userList = [
+export const userList = 
   {
     id: 1,
-    name: "abbas",
+    username: "kanj_a1",
+    fullName: 'Abbas Kanj',
     email: "abbas@gmail.com",
-  },
-  {
-    id: 2,
-    name: "ali",
-    email: "ali@gmail.com",
-  },
-  {
-    id: 3,
-    name: "karim",
-    email: "karim@gmail.com",
-  },
-];
+    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dicta dolorem optio consectetur? Repudiandae dignissimos.",
+    postCount: 10,
+    followersCount: 70,
+    followingCount: 177,
+  };
+

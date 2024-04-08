@@ -1,19 +1,35 @@
 .bg-black {
-    background-color: #000000;
+  background-color: #000000;
 }
 
-.bg-grey{
-    background-color: rgb(55, 55, 55);
+.bg-white {
+  background-color: #e5e1db;
 }
 
-.text-primary{
-    color: #E5E1DB;
+.bg-grey {
+  background-color: #373737;
 }
 
-.text-white{
-    color: #ffffff;
+.bg-blue {
+  background-color: #2828f8;
 }
 
-.text-red{
-    color: #ff0000;
+.text-primary {
+  color: #e5e1db;
+}
+
+.text-secondary {
+  color: #373737;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-red {
+  color: #ff0000;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
+import "../index.css";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -23,37 +24,40 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex column align-center mg-top ">
-      <form className="flex column gap">
-        <input
-          type="email"
-          label="Email address"
-          placeholder="Email"
-          size="lg"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          label="Password"
-          placeholder="Password"
-          size="lg"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        {/* <!-- Remember me checkbox --> */}
-        <div className=" flex justify-between">
-          <div>
-            <input type="checkbox" value="" defaultChecked />
-            <label>Remember me</label>
+    <div className="flex column align-center">
+      <div className="flex column align-center justify-evenly bg-white form ">
+        <h1 className="text-black">Instagram</h1>
+        <form className="flex column big-gap p form-container align-center">
+          <input
+            type="email"
+            label="Email address"
+            placeholder="Email"
+            size="lg"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            label="Password"
+            placeholder="Password"
+            size="lg"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className=" flex column align-center big-gap">
+            <div className="flex">
+              <input type="checkbox" value="" defaultChecked />
+              <label className="text-black">Remember me</label>
+            </div>
+            <a href="#!">Terms and conditions</a>
           </div>
-
-          {/* <!-- Forgot password link --> */}
-          <a href="#!">Terms and conditions</a>
-        </div>
-        <button onClick={handleSignup} type="button">
-          Sign up
-        </button>
-      </form>
+          <button
+            className="btn-style bg-blue text-white"
+            onClick={handleSignup}
+            type="button"
+          >
+            Sign up
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

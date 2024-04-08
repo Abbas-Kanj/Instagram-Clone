@@ -1,166 +1,165 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-border: 0;
-scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  scroll-behavior: smooth;
 }
 
 .flex {
-display: flex;
+  display: flex;
 }
 
 .column {
-flex-direction: column;
+  flex-direction: column;
 }
 
 .center {
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .self-center {
-align-self: center;
+  align-self: center;
 }
 
 .w-full {
-width: 100%;
+  width: 100%;
 }
 
 .h-full {
-    height: 100vh;
+  height: 100vh;
 }
 
-.h-half{
-    height: 50vh;
+.h-half {
+  height: 50vh;
 }
 
 .justify-between {
-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .justify-evenly {
-justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 .justify-around {
-justify-content: space-around;
+  justify-content: space-around;
 }
 .justify-center {
-justify-content: center;
+  justify-content: center;
 }
 .align-end {
-align-items: end;
+  align-items: end;
 }
 .align-center {
-align-items: center;
+  align-items: center;
 }
 .align-left {
-align-items:flex-start;
+  align-items: flex-start;
 }
 
 .bold {
-font-weight: bold;
+  font-weight: bold;
 }
 
 .big-gap {
-    gap: 25px;
+  gap: 25px;
 }
-    
+
 .gap {
-gap: 15px;
+  gap: 15px;
 }
 
 .small-gap {
-gap: 5px;
+  gap: 5px;
 }
 
 .h1-size {
-font-size: 65px;
+  font-size: 65px;
 }
 
 .p {
-padding: 20px;
+  padding: 20px;
 }
 
 .small-p {
-padding: 5px;
+  padding: 5px;
 }
 
-.border-radius {
-border-radius: 10px;
+.border {
+  border-radius: 10px;
 }
 
 .mg-top {
-margin-top: 20px;
+  margin-top: 20px;
 }
 
-.mg-bottom{
-    margin-bottom: 40px;
+.mg-bottom {
+  margin-bottom: 40px;
 }
 
 .hidden {
-display: none;
+  display: none;
 }
 
 .text-align {
-text-align: center;
+  text-align: center;
 }
 
 .large-font {
-font-size: 35px;
+  font-size: 35px;
 }
 
 .medium-font {
-font-size: 17px;
+  font-size: 17px;
 }
 
 .letter-spacing {
-letter-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .btn-style {
-padding: 8px 15px;
-border-radius: 8px;
-cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn-style:hover {
-opacity: 0.85;
+  opacity: 0.85;
 }
 
 .shadow:hover {
-box-shadow: 0px 1px 3px 2px gainsboro;
+  box-shadow: 0px 1px 3px 2px gainsboro;
 }
 
 .input-style {
-border-radius: 30px;
-border: 1px solid gray;
-padding: 0 10px;
-font-size: 16px;
-outline: none;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
 }
 
 .input {
-background-color: rgb(49, 45, 45);
-border: none;
-border-radius: 8px;
-padding: 10px 15px;
-outline: none;
-color: white;
+  background-color: rgb(49, 45, 45);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  outline: none;
+  color: white;
 }
 .input::placeholder {
-color: rgb(177, 172, 172);
+  color: rgb(177, 172, 172);
 }
 
 .cursor-pointer {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .cairo-text {
-font-family: "Cairo", sans-serif;
-font-optical-sizing: auto;
-font-weight: 200;
-font-style: normal;
-font-variation-settings: "slnt" 0;
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
 }
-

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../../features/users/usersSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "../index.css";
 
 const LoginForm = ({ setLogin }) => {
@@ -11,7 +11,6 @@ const LoginForm = ({ setLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const dispactch = useDispatch();
-  const users = useSelector((state) => state.users);
 
   const validateForm = () => {
     if (email == "" || password == "") {

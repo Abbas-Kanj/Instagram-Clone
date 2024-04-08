@@ -1,16 +1,20 @@
 import React from "react";
 import { IoIosSettings } from "react-icons/io";
+import { useSelector } from "react-redux";
 
-const ProfileInfo = ({ users }) => {
+const ProfileInfo = () => {
+  const user = useSelector((state) => state.users.user);
   const {
-    username,
-    fullName,
-    postCount,
-    followersCount,
-    followingCount,
-    bio,
-    profilePicture,
-  } = users;
+    username = "",
+    fullName = "",
+    postCount = 0,
+    followersCount = 0,
+    followingCount = 0,
+    biography = "",
+    profilePicture = "",
+  } = user || {};
+  console.log("this is the user list");
+  console.log(user);
 
   return (
     <div className="flex column align-center w-full">
@@ -39,7 +43,7 @@ const ProfileInfo = ({ users }) => {
           </div>
           <div className="flex column mg-top small-gap">
             <h4>{fullName}</h4>
-            <p>{bio}</p>
+            <p>{biography}</p>
           </div>
         </div>
       </div>

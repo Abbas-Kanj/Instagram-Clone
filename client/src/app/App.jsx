@@ -7,7 +7,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ProfilePage from "../pages/ProfilePage";
 import SignUpForm from "../pages/Login/components/SignUpForm";
+import LoginForm from "../pages/Login/components/LoginForm";
 import usersSlice from "../features/users/usersSlice";
+import Login from "../pages/Login";
 
 const store = configureStore({
   reducer: {
@@ -20,7 +22,7 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SignUpForm />}></Route>
+          <Route path="/" element={<Login />}></Route>
           <Route path="/profilePage" element={<ProfilePage />}></Route>
         </Routes>
       </BrowserRouter>

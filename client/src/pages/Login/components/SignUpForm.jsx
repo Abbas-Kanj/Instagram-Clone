@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 import "../index.css";
+import { useNavigate } from "react-router-dom";
 
-const SignUpForm = () => {
+const SignUpForm = ({ setLogin }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -29,9 +31,11 @@ const SignUpForm = () => {
         if ((res.status = 200)) {
           window.localStorage.setItem("token", res.data.authorisation.token);
           console.log("sign up successfull");
+          setLogin(true);
         }
       } catch (error) {
         console.log(error);
+        setError(error.response.data.message);
       }
     }
   };
@@ -61,7 +65,7 @@ const SignUpForm = () => {
             <a href="#!">Terms and conditions</a>
           </div>
           <button
-            className="btn-style bg-blue text-white"
+            className="btn-style bg-blue text-white bold"
             onClick={handleSignup}
             type="button"
           >
@@ -69,9 +73,12 @@ const SignUpForm = () => {
           </button>
           <div className="flex gap">
             <p className="text-black">Already have an account?</p>
-            <a className=" text-blue cursor-pointer" onClick={handleSignup}>
+            <span
+              className=" text-blue cursor-pointer bold"
+              onClick={() => setLogin(true)}
+            >
               Sign in
-            </a>
+            </span>
           </div>
           {error && <small className="text-red">{error}</small>}
         </form>

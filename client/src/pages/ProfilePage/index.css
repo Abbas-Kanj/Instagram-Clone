@@ -1,0 +1,18 @@
+.profile-info-container{
+    width: 50%;
+    margin-top: 100px;
+}
+
+.profile-info-img{
+    width: 30%;
+}
+
+.profile-info-img img{
+    width: 140px;
+    height: 140px; 
+    border-radius: 100%;
+}
+
+.profile-info-desc{
+    width: 70%;
+}

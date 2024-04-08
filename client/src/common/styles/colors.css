@@ -2,8 +2,16 @@
     background-color: #000000;
 }
 
+.bg-grey{
+    background-color: rgb(55, 55, 55);
+}
+
 .text-primary{
     color: #E5E1DB;
+}
+
+.text-white{
+    color: #ffffff;
 }
 
 .text-red{

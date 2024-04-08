@@ -6,6 +6,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ProfilePage from "../pages/ProfilePage";
+import SignUpForm from "../pages/Login/components/SignUpForm";
 import usersSlice from "../features/users/usersSlice";
 
 const store = configureStore({
@@ -19,7 +20,8 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ProfilePage />}></Route>
+          <Route path="/" element={<SignUpForm />}></Route>
+          <Route path="/profilePage" element={<ProfilePage />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>

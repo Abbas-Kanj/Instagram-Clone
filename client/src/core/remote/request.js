@@ -1,5 +1,4 @@
 import axios from "axios";
-import { requestMehods } from "../enums/requestMethods";
 
 axios.defaults.baseURL = "http://localhost:8000";
 

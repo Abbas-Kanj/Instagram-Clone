@@ -14,6 +14,7 @@ const SignUpForm = () => {
       const res = await sendRequest("POST", "/api/register", data, headers);
       console.log(res.data);
       if ((res.status = 200)) {
+        window.localStorage.setItem("token", res.data.authorisation.token);
         console.log("sign up successfull");
       }
     } catch (error) {

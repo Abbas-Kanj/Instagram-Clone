@@ -11,7 +11,7 @@ const SignUpForm = () => {
     data.append("password", password);
     try {
       const headers = { "Content-Type": "multipart/form-data" };
-      const res = await sendRequest("POST", "/register", data, headers);
+      const res = await sendRequest("POST", "/api/register", data, headers);
       console.log(res.data);
       if ((res.status = 200)) {
         console.log("sign up successfull");
@@ -22,17 +22,19 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex column center ">
-      <form>
+    <div className="flex column align-center mg-top ">
+      <form className="flex column gap">
         <input
           type="email"
           label="Email address"
+          placeholder="Email"
           size="lg"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           label="Password"
+          placeholder="Password"
           size="lg"
           onChange={(e) => setPassword(e.target.value)}
         />

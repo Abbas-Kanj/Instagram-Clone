@@ -6,8 +6,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ProfilePage from "../pages/ProfilePage";
-import SignUpForm from "../pages/Login/components/SignUpForm";
-import LoginForm from "../pages/Login/components/LoginForm";
 import usersSlice from "../features/users/usersSlice";
 import Login from "../pages/Login";
 

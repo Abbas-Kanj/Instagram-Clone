@@ -8,9 +8,6 @@ export const sendRequest = async (method, route, body, headers) => {
     url: route,
     data: body,
     headers: headers,
-    // headers: {
-    //   Authorization: `Bearer ${localStorage.getItem("token")}`,
-    // },
   });
 
   if (response.status === 401) {

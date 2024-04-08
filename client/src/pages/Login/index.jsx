@@ -7,12 +7,6 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate("/profilePage");
-  //     }
-  //   }, []);
-
   return (
     <div>
       {isLogin ? (

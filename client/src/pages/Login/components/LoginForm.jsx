@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
-import "../index.css";
 import { useNavigate } from "react-router-dom";
+import { setUser } from "../../../features/users/usersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import "../index.css";
 
 const LoginForm = ({ setLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const dispactch = useDispatch();
+  const users = useSelector((state) => state.users);
 
   const validateForm = () => {
     if (email == "" || password == "") {
@@ -34,9 +38,10 @@ const LoginForm = ({ setLogin }) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         };
         const res = await sendRequest("POST", "/api/login", data, headers);
-        console.log(res.data);
+        console.log(res.data.user);
         if ((res.status = 200)) {
           window.localStorage.setItem("token", res.data.authorisation.token);
+          dispactch(setUser(res.data.user));
           console.log("sign in successfull");
           navigate("/profilePage");
         }

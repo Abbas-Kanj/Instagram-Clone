@@ -45,15 +45,6 @@ class AuthController extends Controller
     public function register(Request $request)
     {
 
-        if ($request->hasFile('profile_image')) {
-            $file = $request->file('profile_image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move(public_path('/profile_pictures/'), $filename);
-        }
-        // if (File::exists(public_path('/profile_picutes') . $user->profile_picture)) {
-        //     File::delete((public_path('/profile_picutes') . $user->profile_picture));
-        // }
         $request->validate([
             'name' => 'string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -77,6 +68,37 @@ class AuthController extends Controller
                 'type' => 'bearer',
             ]
         ]);
+    }
+
+    public function updateUser(Request $request, $id){
+        $user = User::findOrFail($id);
+
+        if ($request->hasFile('profile_image')) {
+            $file = $request->file('profile_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move(public_path('/profile_pictures/'), $filename);
+        }
+
+        // if (File::exists(public_path('/profile_picutes') . $user->profile_picture)) {
+        //     File::delete((public_path('/profile_picutes') . $user->profile_picture));
+        // }
+
+        // $request->validate([
+        //     'username' => 'required|unique:users,username,' .$id,
+        //     'fullname' => 'required',
+        //     'biography' => 'required',
+        //     'profile_picture' => 'required'
+        // ]);
+
+        $user->update([
+            'username' => $request->username,
+            'fullname' => $request->fullname,
+            'biography' => $request->biography,
+            'profile_picture' => $filename,
+        ]);
+
+        return response()->json($user);
     }
 
     public function logout()

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use Faker\Core\File;
+use Illuminate\Support\Facades\File;
 
 class AuthController extends Controller
 {
@@ -79,9 +79,9 @@ class AuthController extends Controller
             $file->move(public_path('/profile_pictures/'), $filename);
         }
 
-        // if (File::exists(public_path('/profile_pictures/') . $user->profile_picture)) {
-        //     File::delete(public_path('/profile_pictures/') . $user->profile_picture);
-        // }
+        if (File::exists(public_path('/profile_pictures/') . $user->profile_picture)) {
+            File::delete(public_path('/profile_pictures/') . $user->profile_picture);
+        }
 
         $request->validate([
             'fullname' => 'required|string|max:25',

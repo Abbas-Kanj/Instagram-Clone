@@ -1,8 +1,10 @@
 import React from "react";
 import { IoIosSettings } from "react-icons/io";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ProfileInfo = () => {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.users.user);
   const {
     username = "",
@@ -28,7 +30,10 @@ const ProfileInfo = () => {
         <div className="profile-info-desc">
           <div className="flex center gap">
             <h3 className="">{username}</h3>
-            <button className="btn-style text-white bg-grey bold">
+            <button
+              className="btn-style text-white bg-grey bold"
+              onClick={() => navigate("./EditProfile")}
+            >
               Edit Profile
             </button>
             <button className="btn-style text-white bg-grey bold">

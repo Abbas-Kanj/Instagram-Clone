@@ -42,7 +42,7 @@ const LoginForm = ({ setLogin }) => {
           window.localStorage.setItem("token", res.data.authorisation.token);
           dispactch(setUser(res.data.user));
           console.log("sign in successfull");
-          navigate("/profilePage");
+          navigate("/ProfilePage");
         }
       } catch (error) {
         console.log(error);

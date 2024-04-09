@@ -8,6 +8,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProfilePage from "../pages/ProfilePage";
 import usersSlice from "../features/users/usersSlice";
 import Login from "../pages/Login";
+import ProfileInfo from "../pages/ProfilePage/components/ProfileInfo";
+import EditProfile from "../pages/ProfilePage/components/EditProfile";
 
 const store = configureStore({
   reducer: {
@@ -21,7 +23,14 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />}></Route>
-          <Route path="/profilePage" element={<ProfilePage />}></Route>
+          <Route
+            path="/ProfilePage"
+            element={<ProfilePage children={<ProfileInfo />} />}
+          />
+          <Route
+            path="/ProfilePage/EditProfile"
+            element={<ProfilePage children={<EditProfile />} />}
+          />
         </Routes>
       </BrowserRouter>
     </Provider>

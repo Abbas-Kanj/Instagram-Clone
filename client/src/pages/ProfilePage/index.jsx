@@ -1,13 +1,12 @@
 import React from "react";
 import Sidebar from "../../common/components/Sidebar";
-import ProfileInfo from "./components/ProfileInfo";
 import "./index.css";
 
-const ProfilePage = () => {
+const ProfilePage = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar></Sidebar>
-      <ProfileInfo></ProfileInfo>
+      {children}
     </div>
   );
 };

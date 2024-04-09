@@ -77,7 +77,9 @@ const EditProfile = () => {
           <input
             type="text"
             label="fullname"
-            placeholder={user.fullname}
+            placeholder={
+              user.fullname == null ? "Enter your fullname" : user.fullname
+            }
             className="bg-grey text-white"
             onChange={(e) => setFullname(e.target.value)}
           />
@@ -105,7 +107,9 @@ const EditProfile = () => {
           <input
             type="text"
             label="biography"
-            placeholder={user.biography}
+            placeholder={
+              user.biography == null ? "Enter your bio" : user.biography
+            }
             className="bg-grey text-white"
             onChange={(e) => setBiography(e.target.value)}
           />

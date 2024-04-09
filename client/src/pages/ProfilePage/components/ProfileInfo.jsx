@@ -7,6 +7,7 @@ const ProfileInfo = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.users.user);
   const {
+    id = null,
     username = "",
     fullName = "",
     postCount = 0,
@@ -32,7 +33,7 @@ const ProfileInfo = () => {
             <h3 className="">{username}</h3>
             <button
               className="btn-style text-white bg-grey bold"
-              onClick={() => navigate("./EditProfile")}
+              onClick={() => navigate(`./EditProfile`)}
             >
               Edit Profile
             </button>

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
-import { setUser } from "../../../features/users/usersSlice";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-const EditProfile = ({ setLogin }) => {
+const EditProfile = () => {
+  const user = useSelector((state) => state.users.user);
   const navigate = useNavigate();
   const [fullname, setFullname] = useState("");
   const [biography, setBiography] = useState("");
   const [profilePictureData, setProfilePictureData] = useState();
-  const [profilePicture, setProfilePicture] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-  );
+  const [profilePicture, setProfilePicture] = useState("");
   const [error, setError] = useState("");
   const dispactch = useDispatch();
 
@@ -47,7 +46,7 @@ const EditProfile = ({ setLogin }) => {
         };
         const res = await sendRequest(
           "POST",
-          `/api/updateUser/${14}`,
+          `/api/updateUser/${user.id}`,
           data,
           headers
         );
@@ -70,12 +69,21 @@ const EditProfile = ({ setLogin }) => {
           <input
             type="text"
             label="fullname"
-            placeholder="Full name"
+            placeholder={user.fullname}
             className="bg-grey text-white"
             onChange={(e) => setFullname(e.target.value)}
           />
           <div>
-            <img src={profilePicture} alt="" />
+            <img
+              src={
+                profilePicture == ""
+                  ? user &&
+                    "http://127.0.0.1:8000/profile_pictures/" +
+                      user.profile_picture
+                  : profilePicture
+              }
+              alt=""
+            />
             <input
               type="file"
               label="profile_picture"
@@ -89,7 +97,7 @@ const EditProfile = ({ setLogin }) => {
           <input
             type="text"
             label="biography"
-            placeholder="Biography"
+            placeholder={user.biography}
             className="bg-grey text-white"
             onChange={(e) => setBiography(e.target.value)}
           />

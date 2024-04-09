@@ -3,7 +3,7 @@ import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setUser, updateUser } from "../../../features/users/usersSlice";
+import { updateUser } from "../../../features/users/usersSlice";
 
 const EditProfile = () => {
   const user = useSelector((state) => state.users.user);

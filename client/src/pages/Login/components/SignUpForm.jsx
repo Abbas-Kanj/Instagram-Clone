@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 import "../index.css";
-import { useNavigate } from "react-router-dom";
 
 const SignUpForm = ({ setLogin }) => {
-  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const validateForm = () => {
-    if (email == "" || password == "") {
+    if (email == "" || password == "" || username == "") {
       setError("Please fill empty fields");
       return false;
     } else {
@@ -22,6 +21,7 @@ const SignUpForm = ({ setLogin }) => {
   const handleSignup = async () => {
     if (validateForm()) {
       let data = new FormData();
+      data.append("username", username);
       data.append("email", email);
       data.append("password", password);
       try {
@@ -45,6 +45,12 @@ const SignUpForm = ({ setLogin }) => {
       <div className="flex column align-center justify-around bg-white form ">
         <h1 className="text-black">Instagram</h1>
         <form className="flex column big-gap p form-container align-center">
+          <input
+            type="text"
+            label="Username"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <input
             type="email"
             label="Email address"

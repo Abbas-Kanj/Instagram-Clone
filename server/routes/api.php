@@ -11,11 +11,12 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
+    Route::post('/updateUser/{id}', 'updateUser');
 
 });
 
 Route::get('/getUser/{id}', [UserController::class, 'getUser']);
-Route::post('/updateUser/{id}', [UserController::class, 'updateUser']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

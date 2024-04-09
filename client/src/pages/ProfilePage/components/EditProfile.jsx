@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { setUser } from "../../../features/users/usersSlice";
 import { useDispatch } from "react-redux";
 
-const LoginForm = ({ setLogin }) => {
+const EditProfile = ({ setLogin }) => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
   const [fullname, setFullname] = useState("");
   const [biography, setBiography] = useState("");
   const [profilePictureData, setProfilePictureData] = useState();
@@ -17,12 +16,7 @@ const LoginForm = ({ setLogin }) => {
   const dispactch = useDispatch();
 
   const validateForm = () => {
-    if (
-      username == "" ||
-      fullname == "" ||
-      biography == "" ||
-      profilePictureData == ""
-    ) {
+    if (fullname == "" || biography == "" || profilePictureData == "") {
       setError("Please fill empty fields");
       return false;
     } else {
@@ -44,20 +38,21 @@ const LoginForm = ({ setLogin }) => {
   const handleUpdate = async () => {
     if (validateForm()) {
       let data = new FormData();
-      data.append("username", username);
       data.append("fullname", fullname);
       data.append("biography", biography);
       data.append("profile_picture", profilePictureData);
       try {
         const headers = {
-          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         };
-        const res = await sendRequest("POST", "/api/login", data, headers);
-        console.log(res.data.user);
+        const res = await sendRequest(
+          "POST",
+          `/api/updateUser/${14}`,
+          data,
+          headers
+        );
         if ((res.status = 200)) {
-          window.localStorage.setItem("token", res.data.authorisation.token);
-          dispactch(setUser(res.data.user));
-          console.log("sign in successfull");
+          console.log("update successfull");
           navigate("/ProfilePage");
         }
       } catch (error) {
@@ -72,13 +67,6 @@ const LoginForm = ({ setLogin }) => {
       <div className="flex column align-center formEdit ">
         <h1 className="text-primary">Edit Profile</h1>
         <form className="flex column big-gap p formEdit-container align-center">
-          <input
-            type="text"
-            label="username"
-            placeholder="Username"
-            className="bg-grey text-white"
-            onChange={(e) => setUsername(e.target.value)}
-          />
           <input
             type="text"
             label="fullname"
@@ -113,11 +101,11 @@ const LoginForm = ({ setLogin }) => {
           >
             Update
           </button>
-          {/* {error && <small className="text-red">{error}</small>} */}
+          {error && <small className="text-red">{error}</small>}
         </form>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default EditProfile;

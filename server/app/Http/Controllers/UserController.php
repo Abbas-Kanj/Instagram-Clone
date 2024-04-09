@@ -28,13 +28,11 @@ class UserController extends Controller
         // }
 
         $request->validate([
-            'username' => 'required|string|max:12|unique:users',
             'fullname' => 'required|string|max:25',
             'biography' => 'required|string|max:255',
         ]);
 
         $user->update([
-            'username' => $request->username,
             'fullname' => $request->fullname,
             'biography' => $request->biography,
             'profile_picture' => $filename,

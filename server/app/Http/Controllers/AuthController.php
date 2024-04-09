@@ -46,16 +46,15 @@ class AuthController extends Controller
     {
 
         $request->validate([
-            'name' => 'string|max:255',
+            'username' => 'required|string|max:12',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
         $user = User::create([
-            'name' => $request->name ?? "",
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            // 'profile_picture' => $filename
         ]);
 
         $token = Auth::login($user);
@@ -73,26 +72,23 @@ class AuthController extends Controller
     public function updateUser(Request $request, $id){
         $user = User::findOrFail($id);
 
-        if ($request->hasFile('profile_image')) {
-            $file = $request->file('profile_image');
+        if ($request->hasFile('profile_picture')) {
+            $file = $request->file('profile_picture');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $file->move(public_path('/profile_pictures/'), $filename);
         }
 
-        // if (File::exists(public_path('/profile_picutes') . $user->profile_picture)) {
-        //     File::delete((public_path('/profile_picutes') . $user->profile_picture));
+        // if (File::exists(public_path('/profile_pictures/') . $user->profile_picture)) {
+        //     File::delete(public_path('/profile_pictures/') . $user->profile_picture);
         // }
 
-        // $request->validate([
-        //     'username' => 'required|unique:users,username,' .$id,
-        //     'fullname' => 'required',
-        //     'biography' => 'required',
-        //     'profile_picture' => 'required'
-        // ]);
+        $request->validate([
+            'fullname' => 'required|string|max:25',
+            'biography' => 'required|string|max:255',
+        ]);
 
         $user->update([
-            'username' => $request->username,
             'fullname' => $request->fullname,
             'biography' => $request->biography,
             'profile_picture' => $filename,

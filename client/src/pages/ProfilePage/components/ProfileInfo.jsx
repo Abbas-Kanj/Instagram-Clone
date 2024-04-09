@@ -9,12 +9,12 @@ const ProfileInfo = () => {
   const {
     id = null,
     username = "",
-    fullName = "",
+    fullname = "",
     postCount = 0,
     followersCount = 0,
     followingCount = 0,
     biography = "",
-    profilePicture = "",
+    profile_picture = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
   } = user || {};
   console.log("this is the user list");
   console.log(user);
@@ -24,7 +24,7 @@ const ProfileInfo = () => {
       <div className="flex row center profile-info-container big-gap text-white">
         <div className="profile-info-img">
           <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+            src={"http://127.0.0.1:8000/profile_pictures/" + profile_picture}
             alt=""
           />
         </div>
@@ -48,7 +48,7 @@ const ProfileInfo = () => {
             <h4>{followingCount} following</h4>
           </div>
           <div className="flex column mg-top small-gap">
-            <h4>{fullName}</h4>
+            <h4>{fullname}</h4>
             <p>{biography}</p>
           </div>
         </div>

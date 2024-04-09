@@ -3,6 +3,7 @@ import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { setUser, updateUser } from "../../../features/users/usersSlice";
 
 const EditProfile = () => {
   const user = useSelector((state) => state.users.user);
@@ -12,7 +13,7 @@ const EditProfile = () => {
   const [profilePictureData, setProfilePictureData] = useState();
   const [profilePicture, setProfilePicture] = useState("");
   const [error, setError] = useState("");
-  const dispactch = useDispatch();
+  const dispatch = useDispatch();
 
   const validateForm = () => {
     if (fullname == "" || biography == "" || profilePictureData == "") {
@@ -52,6 +53,13 @@ const EditProfile = () => {
         );
         if ((res.status = 200)) {
           console.log("update successfull");
+          dispatch(
+            updateUser({
+              fullname: fullname,
+              biography: biography,
+              profile_picture: res.data.profile_picture,
+            })
+          );
           navigate("/ProfilePage");
         }
       } catch (error) {

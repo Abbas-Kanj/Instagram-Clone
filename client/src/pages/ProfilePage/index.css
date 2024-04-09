@@ -1,18 +1,41 @@
-.profile-info-container{
-    width: 50%;
-    margin-top: 100px;
+.profile-info-container {
+  width: 50%;
+  margin-top: 100px;
 }
 
-.profile-info-img{
-    width: 30%;
+.profile-info-img {
+  width: 30%;
 }
 
-.profile-info-img img{
-    width: 140px;
-    height: 140px; 
-    border-radius: 100%;
+.profile-info-img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
 }
 
-.profile-info-desc{
-    width: 70%;
+.profile-info-desc {
+  width: 70%;
+}
+
+.formEdit {
+  margin-top: 80px;
+  height: 600px;
+  width: 400px;
+}
+
+.formEdit-container img {
+  width: 50px;
+  border-radius: 30px;
+}
+
+.formEdit-container > input {
+  border: 1px solid #373737;
+  border-radius: 2px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.formEdit-container > input::placeholder {
+  color: white;
 }

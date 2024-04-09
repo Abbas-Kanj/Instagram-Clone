@@ -23,7 +23,7 @@ const ProfileInfo = () => {
       <div className="flex row center profile-info-container big-gap text-white">
         <div className="profile-info-img">
           <img
-            src="https://i.pinimg.com/736x/94/fe/5a/94fe5a2a3b83171fbb2494d6100159e9.jpg"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
         </div>

@@ -58,6 +58,10 @@
   align-items: flex-start;
 }
 
+.flex-start {
+  align-content: flex-start;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -113,6 +117,9 @@
 .medium-font {
   font-size: 17px;
 }
+.small-font {
+  font-size: 14px;
+}
 
 .letter-spacing {
   letter-spacing: 2px;
@@ -126,6 +133,7 @@
 
 .btn-style:hover {
   opacity: 0.85;
+  background-color: rgba(128, 128, 128, 0.533);
 }
 
 .shadow:hover {

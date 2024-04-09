@@ -10,6 +10,7 @@ import usersSlice from "../features/users/usersSlice";
 import Login from "../pages/Login";
 import ProfileInfo from "../pages/ProfilePage/components/ProfileInfo";
 import EditProfile from "../pages/ProfilePage/components/EditProfile";
+import Home from "../pages/Home";
 
 const store = configureStore({
   reducer: {
@@ -31,6 +32,7 @@ const App = () => {
             path="/ProfilePage/EditProfile"
             element={<ProfilePage children={<EditProfile />} />}
           />
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </Provider>

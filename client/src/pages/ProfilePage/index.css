@@ -41,3 +41,21 @@
 .formEdit-container > input::placeholder {
   color: white;
 }
+
+.profile-posts-container {
+  width: 1000px;
+  margin-top: 400px;
+  position: absolute;
+  top: 10;
+  left: 25%;
+  border-top: 1px solid white;
+}
+
+.single-post img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  object-fit: fill;
+}

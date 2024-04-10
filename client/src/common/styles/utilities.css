@@ -71,6 +71,10 @@
   align-content: flex-start;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -81,6 +85,10 @@
 
 .gap {
   gap: 15px;
+}
+
+.medium-gap {
+  gap: 10px;
 }
 
 .small-gap {

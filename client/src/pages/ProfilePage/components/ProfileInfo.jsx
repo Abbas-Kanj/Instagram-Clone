@@ -6,6 +6,7 @@ import ProfilePosts from "./ProfilePosts";
 
 const ProfileInfo = () => {
   const navigate = useNavigate();
+  const posts = useSelector((state) => state.user.posts);
   const user = useSelector((state) => state.user.user);
   const {
     id = null,
@@ -42,7 +43,7 @@ const ProfileInfo = () => {
             <IoIosSettings />
           </div>
           <div className="flex  gap mg-top">
-            <h4>{postCount} Posts</h4>
+            <h4>{posts.length} posts</h4>
             <h4>{followersCount} followers</h4>
             <h4>{followingCount} following</h4>
           </div>
@@ -52,7 +53,8 @@ const ProfileInfo = () => {
           </div>
         </div>
       </div>
-      <div>
+
+      <div className="p profile-posts-container">
         <ProfilePosts></ProfilePosts>
       </div>
     </div>

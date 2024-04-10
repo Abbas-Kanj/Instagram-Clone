@@ -46,7 +46,7 @@ const LoginForm = ({ setLogin }) => {
         }
       } catch (error) {
         console.log(error);
-        setError(error.response.data.message);
+        setError(error.res.data.message);
       }
     }
   };

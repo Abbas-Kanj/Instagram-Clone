@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../../../features/posts/postsSlice";
 
 const Feed = () => {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
 
   const getPosts = async () => {
     if (token) {
@@ -14,13 +15,11 @@ const Feed = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         };
         const res = await sendRequest("GET", "/api/getAllPosts", headers);
-        console.log(res.data);
         if ((res.status = 200)) {
-          console.log("get all posts successfull");
           dispatch(setPosts(res.data));
         }
       } catch (error) {
-        console.log(error.response.data.message);
+        console.log(error.res.data.message);
       }
     }
   };
@@ -39,94 +38,33 @@ const Feed = () => {
           />
           <small>yusif</small>
         </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
-        <div className="flex column center">
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-            alt=""
-          />
-          <small>yusif</small>
-        </div>
       </div>
       <div className="flex column p gap posts">
-        <div className="post-container">
-          <div className="post-owner">
-            <img src="" alt="" />
-            <h3>wasted</h3>
+        {posts.map((post, i) => (
+          <div key={i} className="post-container">
+            <div className="post-owner">
+              <img src="" alt="" />
+              <h3>wasted</h3>
+            </div>
+            <div className="post-image">
+              <img
+                src={"http://127.0.0.1:8000/profile_pictures/" + post.image}
+                alt=""
+              />
+            </div>
+            <div className="post-likes"></div>
+            <div className="post-info">
+              <h4>15,326 likes</h4>
+              <h4>
+                wasted
+                <span>{post.caption}</span>
+                <span>{post.hashtags}</span>
+              </h4>
+              <p>View all comments</p>
+              <p>Add a comment</p>
+            </div>
           </div>
-          <div className="post-image">
-            <img
-              src="https://scontent.fbey7-1.fna.fbcdn.net/v/t1.6435-9/95373718_2857738710974493_1021409713377509376_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=om1mYmHohQoAb7TOYQe&_nc_ht=scontent.fbey7-1.fna&oh=00_AfBUtEfTigmfUjj7sTHe0quQHJMxL5ULh1LB7o5vlDEQvQ&oe=663D2D61"
-              alt=""
-            />
-          </div>
-          <div className="post-likes"></div>
-          <div className="post-info">
-            <h4>15,326 likes</h4>
-            <h4>
-              wasted{" "}
-              <span>Dad recreates his children's drawings of animals</span>
-            </h4>
-            <p>View all comments</p>
-            <p>Add a comment</p>
-          </div>
-        </div>
-        <div className="post-container">
-          <div className="post-owner">
-            <img src="" alt="" />
-            <h3>wasted</h3>
-          </div>
-          <div className="post-image">
-            <img
-              src="https://scontent.fbey7-1.fna.fbcdn.net/v/t1.6435-9/95373718_2857738710974493_1021409713377509376_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=om1mYmHohQoAb7TOYQe&_nc_ht=scontent.fbey7-1.fna&oh=00_AfBUtEfTigmfUjj7sTHe0quQHJMxL5ULh1LB7o5vlDEQvQ&oe=663D2D61"
-              alt=""
-            />
-          </div>
-          <div className="post-likes"></div>
-          <div className="post-info">
-            <h4>15,326 likes</h4>
-            <h4>
-              wasted{" "}
-              <span>Dad recreates his children's drawings of animals</span>
-            </h4>
-            <p>View all comments</p>
-            <p>Add a comment</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

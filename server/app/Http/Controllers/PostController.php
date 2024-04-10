@@ -13,6 +13,14 @@ class PostController extends Controller
         return response()->json($posts);
     }
 
+    public function getUserPosts($id){
+        $user = User::findOrFail($id);
+        
+        $posts = Post::where('user_id', $id)->get();
+
+        return response()->json($posts);
+    }
+
     public function createPost(Request $request, $id){
         $user = User::findOrFail($id);
 

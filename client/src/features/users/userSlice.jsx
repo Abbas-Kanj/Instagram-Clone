@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
-  initialState: { user: null },
+  initialState: { user: null, post: [] },
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
@@ -14,6 +14,9 @@ const userSlice = createSlice({
       updatedUser.fullname = fullname;
       updatedUser.biography = biography;
       updatedUser.profile_picture = profile_picture;
+    },
+    setPost: (state, action) => {
+      state.post = action.payload;
     },
   },
 });

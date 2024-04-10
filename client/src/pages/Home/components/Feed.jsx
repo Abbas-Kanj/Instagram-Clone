@@ -7,7 +7,6 @@ const Feed = () => {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
-
   const getPosts = async () => {
     if (token) {
       try {
@@ -39,7 +38,7 @@ const Feed = () => {
           <small>yusif</small>
         </div>
       </div>
-      <div className="flex column p gap posts">
+      <div className="flex column align-center p gap posts">
         {posts.map((post, i) => (
           <div key={i} className="post-container">
             <div className="post-owner">
@@ -55,13 +54,13 @@ const Feed = () => {
             <div className="post-likes"></div>
             <div className="post-info">
               <h4>15,326 likes</h4>
-              <h4>
-                wasted
+              <div className="flex column small-gap w-full">
+                <h4>wasted</h4>
                 <span>{post.caption}</span>
-                <span>{post.hashtags}</span>
-              </h4>
-              <p>View all comments</p>
-              <p>Add a comment</p>
+                <span className="bold">{post.hashtags}</span>
+              </div>
+              <p className="bold cursor-pointer">View all comments</p>
+              <p className="bold cursor-pointer">Add a comment</p>
             </div>
           </div>
         ))}

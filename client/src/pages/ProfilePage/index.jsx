@@ -4,7 +4,7 @@ import "./index.css";
 
 const ProfilePage = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="flex position-relative">
       <Sidebar></Sidebar>
       {children}
     </div>

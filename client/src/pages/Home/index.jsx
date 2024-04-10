@@ -6,7 +6,7 @@ import "./index.css";
 
 const Home = () => {
   return (
-    <div className="flex w-full " style={{ position: "relative" }}>
+    <div className="flex w-full position-relative">
       <Sidebar></Sidebar>
       <Feed></Feed>
       <Recommendations></Recommendations>

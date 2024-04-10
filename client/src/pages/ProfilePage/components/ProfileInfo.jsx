@@ -21,15 +21,15 @@ const ProfileInfo = () => {
 
   return (
     <div className="flex column align-center w-full">
-      <div className="flex row center profile-info-container big-gap text-white">
-        <div className="profile-info-img">
+      <div className="flex row align-center profile-info-container text-white">
+        <div className="flex center profile-info-img">
           <img
             src={"http://127.0.0.1:8000/profile_pictures/" + profile_picture}
             alt=""
           />
         </div>
         <div className="profile-info-desc">
-          <div className="flex center gap">
+          <div className="flex align-center gap">
             <h3 className="">{username}</h3>
             <button
               className="btn-style text-white bg-grey bold"
@@ -42,7 +42,7 @@ const ProfileInfo = () => {
             </button>
             <IoIosSettings />
           </div>
-          <div className="flex center gap mg-top">
+          <div className="flex  gap mg-top">
             <h4>{postCount} Posts</h4>
             <h4>{followersCount} followers</h4>
             <h4>{followingCount} following</h4>

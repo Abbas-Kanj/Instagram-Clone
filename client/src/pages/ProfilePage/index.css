@@ -1,6 +1,8 @@
 .profile-info-container {
   width: 50%;
   margin-top: 100px;
+  position: absolute;
+  left: 35%;
 }
 
 .profile-info-img {

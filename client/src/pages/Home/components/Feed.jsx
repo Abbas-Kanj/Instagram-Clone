@@ -44,7 +44,7 @@ const Feed = () => {
             </div>
             <div className="post-image">
               <img
-                src={"http://127.0.0.1:8000/profile_pictures/" + post.image}
+                src={"http://127.0.0.1:8000/post_images/" + post.image}
                 alt=""
               />
             </div>

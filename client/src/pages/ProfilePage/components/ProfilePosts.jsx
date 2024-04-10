@@ -32,7 +32,7 @@ const ProfilePosts = () => {
       {posts.map((p, i) => (
         <img
           key={i}
-          src={"http://127.0.0.1:8000/profile_pictures/" + p.image}
+          src={"http://127.0.0.1:8000/post_images/" + p.image}
           alt=""
         />
       ))}

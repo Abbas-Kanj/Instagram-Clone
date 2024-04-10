@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/sidebar.css";
+import { sendRequest } from "../../core/remote/request";
 import { useNavigate } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 import { IoIosSearch } from "react-icons/io";
@@ -11,6 +12,11 @@ import { CgProfile } from "react-icons/cg";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <div className="flex column justify-between h-full p align-left  sidebar">
@@ -52,7 +58,10 @@ const Sidebar = () => {
             Profile
           </button>
           <div className="flex">
-            <button className="flex mg-top btn-style w-full p medium-font bg-black text-red">
+            <button
+              className="flex mg-top btn-style w-full p medium-font bg-black text-red"
+              onClick={handleLogout}
+            >
               Logout
             </button>
           </div>

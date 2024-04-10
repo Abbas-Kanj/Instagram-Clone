@@ -16,8 +16,6 @@ const ProfileInfo = () => {
     biography = "",
     profile_picture = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
   } = user || {};
-  console.log("this is the user list");
-  console.log(user);
 
   return (
     <div className="flex column align-center w-full">

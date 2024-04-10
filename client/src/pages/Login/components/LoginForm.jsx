@@ -37,7 +37,6 @@ const LoginForm = ({ setLogin }) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         };
         const res = await sendRequest("POST", "/api/login", data, headers);
-        console.log(res.data.user);
         if ((res.status = 200)) {
           window.localStorage.setItem("token", res.data.authorisation.token);
           dispatch(setUser(res.data.user));

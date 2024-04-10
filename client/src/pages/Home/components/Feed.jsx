@@ -10,10 +10,7 @@ const Feed = () => {
   const getPosts = async () => {
     if (token) {
       try {
-        const headers = {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        };
-        const res = await sendRequest("GET", "/api/getAllPosts", headers);
+        const res = await sendRequest("GET", "/api/getAllPosts");
         if ((res.status = 200)) {
           dispatch(setPosts(res.data));
         }

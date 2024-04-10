@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { sendRequest } from "../../../core/remote/request";
+import { useDispatch } from "react-redux";
+import { setPosts } from "../../../features/posts/postsSlice";
 
 const Feed = () => {
+  const token = localStorage.getItem("token");
+  const dispatch = useDispatch();
+
+  const getPosts = async () => {
+    if (token) {
+      try {
+        const headers = {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        };
+        const res = await sendRequest("GET", "/api/getAllPosts", headers);
+        console.log(res.data);
+        if ((res.status = 200)) {
+          console.log("get all posts successfull");
+          dispatch(setPosts(res.data));
+        }
+      } catch (error) {
+        console.log(error.response.data.message);
+      }
+    }
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <div className="flex column align-center feed">
       <div className="flex center gap feed-stories">

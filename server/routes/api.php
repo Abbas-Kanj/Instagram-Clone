@@ -18,6 +18,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/getUser/{id}', [UserController::class, 'getUser']);
 
 // Posts Controllers
+Route::get('/getAllPosts', [PostController::class, 'getAllPosts']);
 Route::post('/createPost/{id}', [PostController::class, 'createPost']);
 
 

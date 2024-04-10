@@ -7,10 +7,10 @@ import "../index.css";
 
 const LoginForm = ({ setLogin }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const dispatch = useDispatch();
 
   const validateForm = () => {
     if (email == "" || password == "") {

@@ -9,49 +9,49 @@ const Feed = () => {
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
         <div className="flex column center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             alt=""
           />
-          <p>yusif</p>
+          <small>yusif</small>
         </div>
       </div>
       <div className="flex column p gap posts">

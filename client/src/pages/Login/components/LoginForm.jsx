@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
-import { setUser } from "../../../features/users/usersSlice";
+import { setUser } from "../../../features/users/userSlice";
 import { useDispatch } from "react-redux";
 import "../index.css";
 

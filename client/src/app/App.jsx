@@ -6,7 +6,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ProfilePage from "../pages/ProfilePage";
-import usersSlice from "../features/users/usersSlice";
+import userSlice from "../features/users/userSlice";
+import postsSlice from "../features/posts/postsSlice";
 import Login from "../pages/Login";
 import ProfileInfo from "../pages/ProfilePage/components/ProfileInfo";
 import EditProfile from "../pages/ProfilePage/components/EditProfile";
@@ -14,7 +15,8 @@ import Home from "../pages/Home";
 
 const store = configureStore({
   reducer: {
-    users: usersSlice,
+    user: userSlice,
+    posts: postsSlice,
   },
 });
 

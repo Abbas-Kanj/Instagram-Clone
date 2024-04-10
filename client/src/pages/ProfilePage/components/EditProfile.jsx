@@ -3,10 +3,10 @@ import { sendRequest } from "../../../core/remote/request";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { updateUser } from "../../../features/users/usersSlice";
+import { updateUser } from "../../../features/users/userSlice";
 
 const EditProfile = () => {
-  const user = useSelector((state) => state.users.user);
+  const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
   const [fullname, setFullname] = useState("");
   const [biography, setBiography] = useState("");

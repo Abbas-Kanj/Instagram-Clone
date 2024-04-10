@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { sendRequest } from "../../../core/remote/request";
 
 const CreatePostPopup = () => {
-  const [profilePictureData, setProfilePictureData] = useState();
-  const [profilePicture, setProfilePicture] = useState("");
+  const [imageData, setImageData] = useState();
+  const [image, setImage] = useState("");
+
   function handleImageUpload(e) {
     const file = e.target.files[0];
-    setProfilePictureData(file);
+    setImageData(file);
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      setProfilePicture(reader.result);
+      setImage(reader.result);
     };
   }
+
   return (
     <div className="popup flex">
       <div className="flex column popup-child border-radius gap p bg-grey">
@@ -26,10 +28,10 @@ const CreatePostPopup = () => {
             <h3>Select image to upload</h3>
             <img
             //   src={
-            //     profilePicture == ""
+            //     image == ""
             //       ? user &&
-            //         "http://127.0.0.1:8000/profile_pictures/" + profile_picture
-            //       : profilePicture
+            //         "http://127.0.0.1:8000/image/" + image
+            //       : image
             //   }
             />
             <input

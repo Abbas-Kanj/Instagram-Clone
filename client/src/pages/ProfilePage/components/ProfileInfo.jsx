@@ -2,6 +2,7 @@ import React from "react";
 import { IoIosSettings } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ProfilePosts from "./ProfilePosts";
 
 const ProfileInfo = () => {
   const navigate = useNavigate();
@@ -50,6 +51,9 @@ const ProfileInfo = () => {
             <p>{biography}</p>
           </div>
         </div>
+      </div>
+      <div>
+        <ProfilePosts></ProfilePosts>
       </div>
     </div>
   );

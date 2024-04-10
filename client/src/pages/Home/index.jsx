@@ -3,7 +3,6 @@ import Sidebar from "../../common/components/Sidebar";
 import Feed from "./components/Feed";
 import Recommendations from "./components/Recommendations";
 import "./index.css";
-import CreatePostPopup from "./components/CreatePostPopup";
 
 const Home = () => {
   return (

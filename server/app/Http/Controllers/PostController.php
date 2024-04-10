@@ -28,7 +28,7 @@ class PostController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move(public_path('/profile_pictures/'), $filename);
+            $file->move(public_path('/post_images/'), $filename);
         }
 
         $request->validate([

@@ -17,7 +17,10 @@ const Sidebar = () => {
       <div className="flex column gap sidebar-children">
         <h2 className="mg-bottom p">Instagram</h2>
         <div className="flex column gap h-full w-full sidebar-nav">
-          <button className="flex  btn-style p w-full medium-font bg-black text-primary">
+          <button
+            className="flex  btn-style p w-full medium-font bg-black text-primary"
+            onClick={() => navigate("../Home")}
+          >
             <GoHome />
             Home
           </button>
@@ -41,7 +44,10 @@ const Sidebar = () => {
             <FaRegHeart />
             Notifications
           </button>
-          <button className="flex  btn-style w-full p medium-font bg-black text-primary">
+          <button
+            className="flex  btn-style w-full p medium-font bg-black text-primary"
+            onClick={() => navigate("/ProfilePage")}
+          >
             <CgProfile />
             Profile
           </button>

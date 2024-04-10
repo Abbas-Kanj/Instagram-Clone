@@ -202,13 +202,65 @@
   position: relative;
 }
 
+.popup-child button {
+  background-color: transparent;
+}
+
+.popup-child button:hover {
+  color: white;
+}
+
+.popup-child-container {
+  border-top: 1px solid #8080806d;
+}
+
 .popup-img {
+  border-right: 1px solid #8080806d;
   width: 60%;
   min-height: 400px;
+  overflow: hidden;
+}
+
+.popup-img label {
+  padding: 8px 12px;
+}
+
+.popup-img label:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.popup-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .popup-info {
   width: 40%;
+}
+
+.popup-info > div > img {
+  width: 40px;
+  height: auto;
+  border-radius: 100%;
+}
+
+.popup-child textarea {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #8080806d;
+  outline: none;
+  max-width: 460px;
+}
+
+.popup-child input[type="text"] {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #8080806d;
+  outline: none;
+  max-width: 500px;
+  color: white;
 }
 
 .cairo-text {

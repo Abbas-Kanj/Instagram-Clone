@@ -6,6 +6,7 @@ import { setPosts } from "../../../features/posts/postsSlice";
 const Feed = () => {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
+  const userPosts = useSelector((state) => state.user.posts);
   const posts = useSelector((state) => state.posts.posts);
   const getPosts = async () => {
     if (token) {
@@ -22,7 +23,7 @@ const Feed = () => {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [userPosts]);
 
   return (
     <div className="flex column align-center feed">

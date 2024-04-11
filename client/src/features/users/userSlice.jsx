@@ -6,7 +6,6 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
-      console.log(state.user);
     },
     updateUser: (state, action) => {
       const { fullname, biography, profile_picture } = action.payload;
@@ -18,8 +17,12 @@ const userSlice = createSlice({
     setUserPosts: (state, action) => {
       state.posts = action.payload;
     },
+    addUserPosts: (state, action) => {
+      state.posts.push(action.payload);
+    },
   },
 });
 
-export const { setUser, updateUser, setUserPosts } = userSlice.actions;
+export const { setUser, updateUser, setUserPosts, addUserPosts } =
+  userSlice.actions;
 export default userSlice.reducer;

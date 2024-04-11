@@ -18,14 +18,14 @@ const ProfilePosts = () => {
           dispatch(setUserPosts(res.data));
         }
       } catch (error) {
-        console.log(error.res.data.message);
+        console.log(error.response.data.message);
       }
     }
   };
 
   useEffect(() => {
     getUserPosts();
-  }, []);
+  }, [user]);
 
   return (
     <div className="flex center wrap medium-gap single-post">

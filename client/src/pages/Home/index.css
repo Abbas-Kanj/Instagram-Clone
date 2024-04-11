@@ -24,7 +24,9 @@
 }
 
 .post-container {
-  width: 40%;
+  width: 100%;
+  border-bottom: 1px solid #8080806d;
+  margin-bottom: 5px;
 }
 
 .post-image img {

@@ -8,11 +8,17 @@ use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
+    // public function getAllPosts(){
+    //     $posts = Post::all();
+    //     return response()->json($posts);
+    // }
     public function getAllPosts(){
-        $posts = Post::all();
+        $posts = Post::with('user:id,username')->get();
         return response()->json($posts);
     }
-
+    
+    
+ 
     public function getUserPosts($id){
         $user = User::findOrFail($id);
         

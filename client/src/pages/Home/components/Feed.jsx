@@ -38,10 +38,10 @@ const Feed = () => {
       </div>
       <div className="flex column align-center p gap posts">
         {posts.map((post, i) => (
-          <div key={i} className="post-container">
+          <div key={i} className="p gap post-container">
             <div className="post-owner">
               <img src="" alt="" />
-              <h3>wasted</h3>
+              <h3>{post.user.username}</h3>
             </div>
             <div className="post-image">
               <img
@@ -53,12 +53,12 @@ const Feed = () => {
             <div className="post-info">
               <h4>15,326 likes</h4>
               <div className="flex column small-gap w-full">
-                <h4>wasted</h4>
+                <h4>{post.user.username}</h4>
                 <span>{post.caption}</span>
                 <span className="bold">{post.hashtags}</span>
               </div>
-              <p className="bold cursor-pointer">View all comments</p>
-              <p className="bold cursor-pointer">Add a comment</p>
+              <p className=" cursor-pointer">View all comments</p>
+              <p className=" cursor-pointer">Add a comment</p>
             </div>
           </div>
         ))}

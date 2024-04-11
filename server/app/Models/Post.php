@@ -15,16 +15,16 @@ class Post extends Model
         'hashtags',
         'user_id',
     ];
-
-    public function users(){
-        $this->belongsTo(User::class);
+    
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
     public function likes(){
-        $this->hasMany(Like::class);
+        return $this->hasMany(Like::class);
     }
 
     public function comments(){
-        $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 }

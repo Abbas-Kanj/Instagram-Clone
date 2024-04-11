@@ -83,7 +83,7 @@ const Sidebar = () => {
             </button>
             <div className="flex">
               <button
-                className="flex mg-top btn-style w-full p medium-font bg-black text-red"
+                className=" mg-top btn-style w-full p small-font bg-black bold text-red"
                 onClick={handleLogout}
               >
                 Logout

@@ -52,11 +52,11 @@ const Feed = () => {
             <div className="post-likes"></div>
             <div className="post-info">
               <h4>15,326 likes</h4>
-              <div className="flex column small-gap w-full">
+              <div className="flex small-gap w-full">
                 <h4>{post.user.username}</h4>
                 <span>{post.caption}</span>
-                <span className="bold">{post.hashtags}</span>
               </div>
+              <span className="bold">{post.hashtags}</span>
               <p className=" cursor-pointer">View all comments</p>
               <p className=" cursor-pointer">Add a comment</p>
             </div>

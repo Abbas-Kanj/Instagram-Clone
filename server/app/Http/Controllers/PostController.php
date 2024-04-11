@@ -43,10 +43,6 @@ class PostController extends Controller
             'image' => $filename,
             'user_id' => $id
         ]);
-
-        if (File::exists(public_path('/post_images/') . $post->image)) {
-            File::delete(public_path('/post_images/') . $post->image);
-        }
         
         return response()->json($post);
     }

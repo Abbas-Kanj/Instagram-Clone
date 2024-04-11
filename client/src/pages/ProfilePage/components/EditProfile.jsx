@@ -35,7 +35,9 @@ const EditProfile = () => {
     };
   }
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+
     if (validateForm()) {
       let data = new FormData();
       data.append("fullname", fullname);
@@ -74,15 +76,6 @@ const EditProfile = () => {
       <div className="flex column align-center formEdit ">
         <h1 className="text-primary">Edit Profile</h1>
         <form className="flex column big-gap p formEdit-container align-center">
-          <input
-            type="text"
-            label="fullname"
-            placeholder={
-              user.fullname == null ? "Enter your fullname" : user.fullname
-            }
-            className="bg-grey text-white"
-            onChange={(e) => setFullname(e.target.value)}
-          />
           <div>
             <img
               src={
@@ -94,16 +87,31 @@ const EditProfile = () => {
               }
               alt=""
             />
+
             <input
+              id="image-upload"
               type="file"
               label="profile_picture"
               accept="image/*"
-              placeholder="Profile Picture"
-              className="bg-grey text-white"
+              className="hidden"
               onChange={(e) => handleImageUpload(e)}
             />
+            <label
+              htmlFor="image-upload"
+              className="bg-blue text-white border small-font cursor-pointer bold"
+            >
+              Select image to upload
+            </label>
           </div>
-
+          <input
+            type="text"
+            label="fullname"
+            placeholder={
+              user.fullname == null ? "Enter your fullname" : user.fullname
+            }
+            className="bg-grey text-white"
+            onChange={(e) => setFullname(e.target.value)}
+          />
           <input
             type="text"
             label="biography"

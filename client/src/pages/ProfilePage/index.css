@@ -59,3 +59,13 @@
   flex-shrink: 0;
   object-fit: fill;
 }
+
+.formEdit-container label {
+  padding: 8px 12px;
+  margin: 10px;
+}
+
+.formEdit-container label:hover {
+  opacity: 80%;
+  cursor: pointer;
+}

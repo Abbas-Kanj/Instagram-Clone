@@ -7,7 +7,6 @@ import { addUserPosts } from "../../../features/users/userSlice";
 const CreatePostPopup = ({ setOpenCreatePostPopup }) => {
   const token = localStorage.getItem("token");
   const user = useSelector((state) => state.user.user);
-  const posts = useSelector((state) => state.user.posts);
   const dispatch = useDispatch();
   const [error, setError] = useState("");
   const [caption, setCaption] = useState("");
@@ -104,7 +103,7 @@ const CreatePostPopup = ({ setOpenCreatePostPopup }) => {
                 }
                 alt=""
               />
-              <h5>kanj_a1</h5>
+              <h5>{user.username}</h5>
             </div>
             <textarea
               name=""
